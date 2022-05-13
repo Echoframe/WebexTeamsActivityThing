@@ -1,0 +1,28 @@
+#run this, forget about it, never go afk on webex!
+#obviously, this is HIGHLY INDIVIDUAL AND NEVER BEFORE SEEN CODE ;)
+#i didnt have this when i needed it so i made it stealthy enough for your boss not to notice when looking at it
+
+#make console look different lol, uncomment to activate
+$host.ui.RawUI.WindowTitle = “Remote Update Tool”
+
+Clear-Host
+Echo "Updating SoftwareCenter"
+Start-Sleep -Milliseconds 100
+Echo "Checking for latest version..."
+
+$WShell = New-Object -com "Wscript.Shell"
+$y = 0
+while ($true)
+{
+$rnd = -join ((65..90) + (97..122) | Get-Random -Count 16 | % {[char]$_})
+
+$WShell.sendkeys("{SCROLLLOCK}")
+Write-Progress -Activity "Package Hash: $rnd" -Status "$y% Complete:" -PercentComplete $y
+Start-Sleep -Milliseconds 100
+$WShell.sendkeys("{SCROLLLOCK}")
+#run for 8hrs: +0200027777777
+#default config will have it run for about 80 Minutes but looks more believeable
+
+$y = $y + 0.15
+Start-Sleep -Seconds 8
+}
