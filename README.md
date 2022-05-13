@@ -10,7 +10,6 @@ Run this in your powershell and never worry about that grey circle again. No adm
 ```
 #run this, forget about it, never go afk on webex!
 
-#make console look different lol, uncomment to activate
 $host.ui.RawUI.WindowTitle = “Remote Update Tool”
 
 Clear-Host
